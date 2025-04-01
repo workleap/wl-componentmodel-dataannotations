@@ -2,8 +2,6 @@
   <PropertyGroup>
     <TargetFrameworks>net462;net8.0;netstandard2.0</TargetFrameworks>
     <IsPackable>True</IsPackable>
-    <IncludeSymbols>True</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <AssemblyTitle>Workleap.ComponentModel.DataAnnotations</AssemblyTitle>
     <PackageId>Workleap.ComponentModel.DataAnnotations</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
