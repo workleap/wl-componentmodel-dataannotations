@@ -36,6 +36,14 @@ Always reference these instructions first and fallback to search or bash command
   - Run the full test suite (220 tests) which covers all validation attributes
   - Test at least one example of each attribute type if modifying core validation logic
   - Verify PublicAPI.Shipped.txt is updated if adding new public APIs
+  - Example validation scenario test:
+    ```csharp
+    var person = new Person { Id = "invalid-guid", Name = "" };
+    var context = new ValidationContext(person);
+    var results = new List<ValidationResult>();
+    var isValid = Validator.TryValidateObject(person, context, results, validateAllProperties: true);
+    // Should validate [Guid] and [NotEmpty] attributes
+    ```
 
 - **CRITICAL TIMING**: Set appropriate timeouts for all commands:
   - Build commands: 15+ minute timeout
@@ -72,6 +80,16 @@ src/
 │   └── *Tests.cs                                           # xUnit test files
 └── Workleap.ComponentModel.DataAnnotations.sln             # Solution file
 ```
+
+### Key Data Annotation Attributes Examples
+The library provides the following validated attributes:
+- `[Guid]` - Validates GUID format: `[Guid("D")]` for specific format
+- `[NotEmpty]` - Validates collections are not empty  
+- `[ValidateProperties]` - Recursively validates nested objects
+- `[TimeSpan]` - Validates TimeSpan strings: `[TimeSpan("c")]` for specific format
+- `[UrlOfKind(UriKind.Absolute)]` - Validates URLs of specific kinds
+- `[Contains("text")]` - String contains validation
+- `[StartsWith("prefix")]` / `[EndsWith("suffix")]` - String prefix/suffix validation
 
 ### Key Project Features
 - **Multi-target frameworks**: net462, net8.0, netstandard2.0
