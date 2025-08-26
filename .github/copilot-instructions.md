@@ -17,7 +17,7 @@ Always reference these instructions first and fallback to search or bash command
   - `dotnet build -c Debug` -- takes ~7.8 seconds. NEVER CANCEL. Set timeout to 15+ minutes.
   - `dotnet test -c Debug --no-build --no-restore -l "console;verbosity=detailed"` -- takes ~2.6 seconds. NEVER CANCEL. Set timeout to 5+ minutes.
 
-- **NEVER attempt Release builds** - they fail due to GitVersion requiring proper Git setup. Always use Debug configuration for development work.
+- **Do not attempt Release builds locally** – they will fail in development environments without proper GitVersion setup. Use Debug configuration for all local development work. Release builds are handled by CI/CD pipelines where the environment is correctly configured.
 
 - Run formatting checks and fixes:
   - `dotnet format --verify-no-changes` -- check for formatting issues
