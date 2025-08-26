@@ -46,8 +46,6 @@ Always reference these instructions first and fallback to search or bash command
     ```
 
 - **CRITICAL TIMING**: Set appropriate timeouts for all commands:
-  - Build commands: 15+ minute timeout
-  - Test commands: 5+ minute timeout
   - Avoid cancelling any build or test command prematurely; only cancel if there are clear issues (e.g., infinite loop, system hang, or error)
 
 ## Common Tasks
