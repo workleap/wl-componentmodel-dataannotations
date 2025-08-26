@@ -13,7 +13,7 @@ Always reference these instructions first and fallback to search or bash command
 
 - Bootstrap, build, and test the repository:
   - Navigate to: `cd src/` (solution file is in src directory, not root)
-  - `dotnet clean -c Debug` -- takes ~1.6 seconds
+  - `dotnet clean -c Debug` -- Never cancel, set timeout to 5 minutes.
   - `dotnet build -c Debug` -- takes ~7.8 seconds. NEVER CANCEL. Set timeout to 15+ minutes.
   - `dotnet test -c Debug --no-build --no-restore -l "console;verbosity=detailed"` -- takes ~2.6 seconds. NEVER CANCEL. Set timeout to 5+ minutes.
 
