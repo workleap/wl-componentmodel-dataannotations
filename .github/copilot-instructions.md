@@ -13,9 +13,9 @@ Always reference these instructions first and fallback to search or bash command
 
 - Bootstrap, build, and test the repository:
   - Navigate to: `cd src/` (solution file is in src directory, not root)
-  - `dotnet clean -c Debug` -- Never cancel, set timeout to 5 minutes.
-  - `dotnet build -c Debug` --  Never cancel, set timeout to 5 minutes.
-  - `dotnet test -c Debug --no-build --no-restore -l "console;verbosity=detailed"` -- Never cancel, set timeout to 5+ minutes.
+  - `dotnet clean -c Debug`
+  - `dotnet build -c Debug`
+  - `dotnet test -c Debug --no-build --no-restore -l "console;verbosity=detailed"`
 
 - **Do not attempt Release builds locally** – they will fail in development environments without proper GitVersion setup. Use Debug configuration for all local development work. Release builds are handled by CI/CD pipelines where the environment is correctly configured.
 
