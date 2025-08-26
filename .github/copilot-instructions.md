@@ -99,7 +99,6 @@ The library provides the following validated attributes:
 - **Coding standards**: Workleap.DotNet.CodingStandards package
 
 ### Important Notes
-- The root `Build.ps1` script will fail without proper GitVersion setup - use direct dotnet commands instead
 - Always work in the `src/` directory, not the repository root
 - Release builds fail due to GitVersion - stick to Debug builds for development
 - The library provides custom validation attributes like `[Guid]`, `[NotEmpty]`, `[ValidateProperties]`, etc.
