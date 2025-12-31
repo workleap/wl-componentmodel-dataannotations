@@ -29,20 +29,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup .NET 8
+      - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.x'
-
-      - name: Setup .NET 9
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: '9.x'
-
-      - name: Setup .NET 10
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: '10.x'
+          global-json-file: global.json
+          dotnet-version: |
+            10.0.x
+            8.0.x
 
       - name: Authenticate to Azure Artifacts
         uses: workleap/wl-reusable-workflows/az-artifact-authenticate@main

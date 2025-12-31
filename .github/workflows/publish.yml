@@ -30,20 +30,9 @@ jobs:
           keyvault-name: ${{ vars.IDP_CICD_KEYVAULT_NAME }}
           secret-name: "nuget-org-workleap-api-key"
 
-      - name: Setup .NET 8
-        uses: actions/setup-dotnet@v5
+      - uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.x'
-
-      - name: Setup .NET 9
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: '9.x'
-
-      - name: Setup .NET 10
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: '10.x'
+          global-json-file: "global.json"
 
       - run: ./Build.ps1
         shell: pwsh
