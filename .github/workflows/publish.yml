@@ -33,6 +33,9 @@ jobs:
       - uses: actions/setup-dotnet@v5
         with:
           global-json-file: "global.json"
+          dotnet-version: |
+            9.0.x
+            8.0.x
 
       - run: ./Build.ps1
         shell: pwsh
